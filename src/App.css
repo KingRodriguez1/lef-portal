@@ -1,0 +1,12 @@
+.logo {
+  float: left;
+  height: 32px;
+  width: 32px;
+  margin: 16px 24px 16px 0;
+  background: rgba(255, 255, 255, 0.3);
+  display: flex;
+  padding: 15px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}

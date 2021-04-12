@@ -1,2 +1,0 @@
-# lef-portal
-LEF Frontend
