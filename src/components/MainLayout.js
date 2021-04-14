@@ -6,6 +6,8 @@ import { StartPage } from "./StartPage";
 import { ResultPage } from "./ResultPage";
 import { ResultEntry } from "./resultPageComponents/ResultEntry";
 import { Imprint } from "./Imprint";
+import { SignInPage } from "./SignInPage";
+import { SignUpPage } from "./SignUpPage";
 
 const { Header, Footer, Content } = Layout;
 const pages = [
@@ -18,6 +20,13 @@ const pages = [
     id: "2",
     label: "Impressum",
     to: "/impressum",
+    style: { float: "right" },
+  },
+  {
+    id: "3",
+    label: "Einloggen",
+    to: "/signIn",
+    style: { float: "right" },
   },
 ];
 
@@ -25,7 +34,6 @@ ResultEntry.propTypes = { question: PropTypes.string };
 
 const MainLayout = ({ location = {}, history = {} }) => {
   const { state = {} } = location;
-  console.debug(location);
   const selectedKeys = pages
     .filter((p) => p.to === location.pathname)
     .map((page) => page.id);
@@ -36,7 +44,7 @@ const MainLayout = ({ location = {}, history = {} }) => {
         <Menu theme="dark" mode="horizontal" selectedKeys={selectedKeys}>
           {pages.map((page) => {
             return (
-              <Menu.Item key={page.id}>
+              <Menu.Item key={page.id} style={page.style}>
                 <Link to={page.to}>{page.label}</Link>
               </Menu.Item>
             );
@@ -55,6 +63,14 @@ const MainLayout = ({ location = {}, history = {} }) => {
 
             <Route path={"/result"}>
               <ResultPage city={state.city} onBack={() => history.goBack()} />
+            </Route>
+
+            <Route path={"/signIn"}>
+              <SignInPage />
+            </Route>
+
+            <Route path={"/signUp"}>
+              <SignUpPage />
             </Route>
 
             <Route path="/">

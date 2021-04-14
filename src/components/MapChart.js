@@ -53,13 +53,28 @@ const MapChart = ({ lon, lat }) => {
         }
       </Geographies>
       {cities.map((city) => (
-        <Marker coordinates={[city.lon, city.lat]}>
-          <circle r={8} fill={"#DEF"} />
+        <Marker
+          key={`${city.lon}/${city.lat}`}
+          coordinates={[city.lon, city.lat]}
+        >
+          <circle r={10} fill={"#DEF"} />
+          <text
+            textAnchor="middle"
+            y={4}
+            x={35}
+            style={{
+              fontFamily: "system-ui",
+              fill: "#5D5A6D",
+              fontSize: 10,
+            }}
+          >
+            {city.label}
+          </text>
         </Marker>
       ))}
       {lon && lat && (
         <Marker coordinates={[lon, lat]}>
-          <circle r={8} fill="#F53" />
+          <circle r={10} fill="#FEA" />
         </Marker>
       )}
     </ComposableMap>
