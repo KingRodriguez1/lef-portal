@@ -10,3 +10,22 @@
   align-items: center;
   justify-content: center;
 }
+
+.resultEntryContainer {
+  padding: 15px;
+  border: 1px solid #DDD;
+  border-radius: 8px;
+  background-color: cornflowerblue;
+  color: #FEFEFE;
+}
+
+.answerContainer {
+  margin-top: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #DDDDDD;
+  border-radius: 8px;
+  min-height: 200px;
+}

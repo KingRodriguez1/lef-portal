@@ -5,7 +5,7 @@ import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import reducers from "./../src/redux/rootReducers";
 import { createLogger } from "redux-logger";
 import "antd/dist/antd.css";
-import MainContent from "./components/MainContent";
+import MainContent from "./components/MainLayout";
 
 const logger = createLogger({
   timestamp: true,
