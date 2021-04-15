@@ -57,7 +57,7 @@ export function SignInPage() {
             rules={[
               {
                 required: true,
-                message: "Please input your username!",
+                message: "Bitte Ihren Benutzernamen nicht vergessen.",
               },
             ]}
           >
@@ -70,7 +70,7 @@ export function SignInPage() {
             rules={[
               {
                 required: true,
-                message: "Please input your password!",
+                message: "Bitte Ihr Passwort eingeben.",
               },
             ]}
           >
@@ -91,7 +91,9 @@ export function SignInPage() {
 
         <Row align={"middle"}>
           <Typography>Noch keinen Account?</Typography>
-          <Button type={"link"}>Jetzt registrieren</Button>
+          <Button type={"link"} href={"/signUp"}>
+            Jetzt registrieren
+          </Button>
         </Row>
       </Col>
     </Row>

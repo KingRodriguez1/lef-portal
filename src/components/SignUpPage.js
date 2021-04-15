@@ -10,6 +10,7 @@ import {
   Space,
 } from "antd";
 import Title from "antd/es/typography/Title";
+import { lefApi } from "../api/lefApi";
 
 const layout = {
   labelCol: {
@@ -28,7 +29,7 @@ const tailLayout = {
 
 export function SignUpPage() {
   const onFinish = (values) => {
-    console.log("Success:", values);
+    lefApi.signUp(values.username, values.password);
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -57,7 +58,7 @@ export function SignUpPage() {
             rules={[
               {
                 required: true,
-                message: "Please input your username!",
+                message: "Bitte einen Benutzernamen wählen",
               },
             ]}
           >
@@ -70,7 +71,7 @@ export function SignUpPage() {
             rules={[
               {
                 required: true,
-                message: "Please input your password!",
+                message: "Bitte ein Passwort eintragen :)",
               },
             ]}
           >
@@ -84,11 +85,6 @@ export function SignUpPage() {
           </Form.Item>
         </Form>
         <Divider />
-
-        <Row align={"middle"}>
-          <Typography>Noch keinen Account?</Typography>
-          <Button type={"link"}>Jetzt registrieren</Button>
-        </Row>
       </Col>
     </Row>
   );
